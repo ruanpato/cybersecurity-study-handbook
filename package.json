@@ -1,0 +1,23 @@
+{
+  "name": "cybersecurity-study-handbook",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Bilingual (en-US/pt-BR) introductory cybersecurity handbook & study roadmap. Tooling only — the book itself is plain Markdown.",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "lint": "npm run lint:md && npm run lint:spell && npm run parity",
+    "lint:md": "markdownlint-cli2",
+    "lint:spell": "cspell \"**/*.md\" --no-progress",
+    "parity": "bash tools/check-bilingual-parity.sh"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@cspell/dict-pt-br": "^2.4.2",
+    "cspell": "^10.0.1",
+    "husky": "^9.1.7",
+    "markdownlint-cli2": "^0.22.1"
+  }
+}

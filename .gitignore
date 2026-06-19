@@ -1,0 +1,104 @@
+# ─────────────────────────────────────────────────────────────
+# Artefatos de build de PDF / exportação do handbook
+# ─────────────────────────────────────────────────────────────
+*.pdf
+*.epub
+*.docx
+build/
+dist/
+_site/
+site/
+site-src/
+.cache/
+.pandoc/
+*.aux
+*.log
+*.toc
+*.out
+
+# ─────────────────────────────────────────────────────────────
+# Ambientes virtuais e dependências (projetos dos labs)
+# ─────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+node_modules/
+.pnp/
+*.egg-info/
+.tox/
+
+# ─────────────────────────────────────────────────────────────
+# Arquivos de IDE / editor
+# ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.obsidian/
+.typora/
+
+# ─────────────────────────────────────────────────────────────
+# Sistema operacional
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─────────────────────────────────────────────────────────────
+# Segredos e dados sensíveis — NUNCA versionar
+# ─────────────────────────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+secrets/
+credentials/
+*.token
+
+# ─────────────────────────────────────────────────────────────
+# Artefatos de laboratório (não devem ser versionados)
+# ─────────────────────────────────────────────────────────────
+*.pcap
+*.pcapng
+*.vmdk
+*.vdi
+*.ova
+*.qcow2
+amostras/
+samples/
+malware/
+evidencias/
+captures/
+loot/
+
+# ─────────────────────────────────────────────────────────────
+# Temporários
+# ─────────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ─────────────────────────────────────────────────────────────
+# Documentos internos / de auditoria — NÃO publicar
+# (relatórios históricos, planos de remediação, prontidão,
+#  PROJECT_STATUS e CONTENT-COVERAGE-*)
+# ─────────────────────────────────────────────────────────────
+.internal/
+.local/
+
+# ─────────────────────────────────────────────────────────────
+# Caches de ferramentas de dev / CI (labs Python/JS, linters)
+# ─────────────────────────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.eslintcache
+coverage/
+.coverage
+htmlcov/

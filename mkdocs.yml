@@ -1,0 +1,101 @@
+# MkDocs Material — navigable bilingual site (auto-deployed to GitHub Pages).
+# The .md files remain fully readable on GitHub without building anything.
+# Local preview: see "build & deploy" in CONTRIBUTING (stage into site-src first).
+#
+# Licensing: this config file is covered by the MIT license (see LICENSE-CODE).
+
+site_name: Cybersecurity Handbook & Study Roadmap
+site_description: Introductory cybersecurity handbook and study roadmap (en-US / pt-BR), beta.
+site_url: https://ruanpato.com/cybersecurity-study-handbook/
+repo_url: https://github.com/ruanpato/cybersecurity-study-handbook
+repo_name: ruanpato/cybersecurity-study-handbook
+edit_uri: edit/main/
+# MkDocs forbids docs_dir == repo root. The bilingual content is staged into
+# ./site-src before building (see .github/workflows/deploy-docs.yml, and the
+# "build & deploy" section in CONTRIBUTING for local previews). site-src/ is
+# git-ignored and generated on demand.
+docs_dir: site-src
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+# Header language selector (globe icon). Lightweight i18n that points to each
+# language's overview page. A full mkdocs-static-i18n setup is intentionally not
+# used — it requires mirrored locale folders with identical filenames, which would
+# mean renaming the translated pt-BR files and rewriting links, breaking the raw
+# GitHub/README reading experience this repo is built around.
+extra:
+  alternate:
+    - name: English
+      link: en-US/
+      lang: en
+    - name: Português (Brasil)
+      link: pt-BR/
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# Language selection is handled by the per-document 🌐 switcher links and the
+# top-level landing page (index.md). A full i18n plugin (mkdocs-static-i18n) is
+# intentionally NOT used: it expects locale folders and would break the 1:1
+# relative links/anchors that the raw-Markdown reading experience relies on.
+
+plugins:
+  # 'search' must be listed explicitly once 'plugins' is set.
+  - search
+  # Social cards need image libs (cairo/pango). GitHub sets CI=true on every runner,
+  # so we gate on a dedicated var set ONLY by the deploy workflow (which installs the
+  # image libraries). Other CI jobs and local builds skip card generation.
+  # (git-revision-date-localized is intentionally omitted: the staged site-src/ copies
+  #  aren't git-tracked, so it could only ever show the build date — misleading.)
+  - social:
+      cards: !ENV [MKDOCS_SOCIAL, false]
+
+nav:
+  - Home: index.md
+  - English:
+      - Overview: en-US/README.md
+      - Handbook: en-US/HANDBOOK.md
+      - Roadmap: en-US/ROADMAP.md
+      - Specializations: en-US/SPECIALIZATIONS.md
+      - Portfolio & Career: en-US/PORTFOLIO-AND-CAREER.md
+      - Progress Checklist: en-US/PROGRESS-CHECKLIST.md
+      - Glossary: en-US/GLOSSARY.md
+      - References: en-US/REFERENCES.md
+      - Reader Labs: en-US/reader-labs/README.md
+      - Contributing: en-US/CONTRIBUTING.md
+  - Português:
+      - Visão geral: pt-BR/README.md
+      - Handbook: pt-BR/HANDBOOK.md
+      - Roteiro: pt-BR/ROADMAP.md
+      - Especializações: pt-BR/ESPECIALIZACOES.md
+      - Portfólio e Carreira: pt-BR/PORTFOLIO-E-CARREIRA.md
+      - Checklist de Progresso: pt-BR/CHECKLIST-DE-PROGRESSO.md
+      - Glossário: pt-BR/GLOSSARIO.md
+      - Referências: pt-BR/REFERENCIAS.md
+      - Labs do Leitor: pt-BR/labs-do-leitor/README.md
+      - Contribuição: pt-BR/CONTRIBUTING.md

@@ -1,0 +1,24 @@
+# lychee link checker — https://github.com/lycheeverse/lychee
+max_retries = 2
+retry_wait_time = 2
+max_concurrency = 8
+timeout = 30   # seconds; some official pages (heavy HTML) are slow to respond
+
+# Status codes treated as success (202/204 = accepted/no-content; 429 = rate-limited but alive).
+accept = [200, 202, 204, 206, 429]
+
+# Sites that block automated clients (verified manually in REFERENCES.md) and
+# auth-only / dynamic endpoints that a checker cannot reach.
+exclude = [
+  "^https://www\\.iso\\.org",
+  "^https://www\\.cisa\\.gov",
+  "^https://tryhackme\\.com",
+  "^https://www\\.planalto\\.gov\\.br",
+  "^https://img\\.shields\\.io",
+  "/security/advisories/new$",
+  "^https://www\\.cl\\.cam\\.ac\\.uk/~rja14/book\\.html$",  # verified live; heavy page, times out the checker
+  "^https://ruanpato\\.com/cybersecurity-study-handbook(/.*)?$", # auto reference
+]
+
+# Don't scan generated or internal trees.
+exclude_path = [".internal", "node_modules", "site", "site-src"]

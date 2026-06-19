@@ -1,0 +1,27 @@
+{
+  // markdownlint-cli2 configuration. Rules tuned to the handbook's intentional
+  // structure (multiple chapter-level H1s, repeated section headings, inline
+  // anchors), while still catching real hygiene issues.
+  "config": {
+    "default": true,
+    "MD013": false, // line-length: prose wraps ~100, but tables/links exceed it
+    "MD024": { "siblings_only": true }, // "Key points" repeats once per chapter
+    "MD025": false, // multiple top-level H1 (one per chapter) is intentional
+    "MD026": false, // headings may legitimately end with ":"
+    "MD033": false, // inline HTML used for explicit anchors: <a id="...">
+    "MD034": false, // references intentionally list bare URLs
+    "MD036": false, // bold lead-ins are used stylistically, not as headings
+    "MD041": false, // some files open with an HTML comment before the H1
+    "MD046": false, // allow both fenced and indented code where it reads better
+    "MD060": false  // table pipe spacing is cosmetic; tables render fine
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    "node_modules",
+    ".internal",
+    "site",
+    "site-src",
+    ".github",
+    "CHANGELOG.md"
+  ]
+}

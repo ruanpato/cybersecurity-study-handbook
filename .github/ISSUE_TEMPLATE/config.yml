@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🔒 Security / Segurança
+    url: https://github.com/ruanpato/cybersecurity-study-handbook/security/advisories/new
+    about: >
+      Report a security or safety problem privately (leaked secret,
+      operationalizable content). See SECURITY.md. / Reporte de forma privada
+      (segredo vazado, conteúdo operacionalizável). Veja SECURITY.md.

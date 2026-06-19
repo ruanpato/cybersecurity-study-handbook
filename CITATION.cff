@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Cybersecurity Handbook & Study Roadmap (en-US / pt-BR)"
+abstract: >-
+  An introductory, bilingual (English and Brazilian Portuguese) cybersecurity
+  handbook and progressive study roadmap for people starting a Computer Science
+  degree who want a long-term career in security. Defensive and educational.
+type: dataset
+authors:
+  - name: "ruanpato"
+    website: "https://github.com/ruanpato"
+version: "0.2.0"
+date-released: "2026-06-18"
+license: CC-BY-4.0
+url: "https://ruanpato.com/cybersecurity-study-handbook/"
+repository-code: "https://github.com/ruanpato/cybersecurity-study-handbook"
+keywords:
+  - cybersecurity
+  - security
+  - study guide
+  - handbook
+  - roadmap
+  - education
+  - bilingual
